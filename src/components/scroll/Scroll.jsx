@@ -7,7 +7,7 @@ export default function Scroll() {
       <Fab
         onClick={() => window.scrollTo(0, 0)}
         variant="extended"
-        sx={{ position: "fixed", bottom: 33, right: 33 }}
+        sx={{ position: "fixed", bottom: 55, right: 33 }}
         size="small"
         color="primary"
         aria-label="add"

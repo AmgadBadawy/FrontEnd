@@ -23,38 +23,11 @@ function Footer() {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
-              Your Company
-            </Typography>
-            <Typography variant="body2">
-              We provide top-notch services and the best products in the market. Stay connected!
+              E-Commerce Website
             </Typography>
           </Grid>
 
-          <Grid item xs={12} sm={6} md={3}>
-            <Typography variant="h6" gutterBottom>
-              Quick Links
-            </Typography>
-            <Typography variant="body2">
-              <a href="#home" style={{ color: theme.palette.primary.main, textDecoration: "none" }}>
-                Home
-              </a>
-            </Typography>
-            <Typography variant="body2">
-              <a href="#about" style={{ color: theme.palette.primary.main, textDecoration: "none" }}>
-                About Us
-              </a>
-            </Typography>
-            <Typography variant="body2">
-              <a href="#services" style={{ color: theme.palette.primary.main, textDecoration: "none" }}>
-                Services
-              </a>
-            </Typography>
-            <Typography variant="body2">
-              <a href="#contact" style={{ color: theme.palette.primary.main, textDecoration: "none" }}>
-                Contact Us
-              </a>
-            </Typography>
-          </Grid>
+          
 
           <Grid item xs={12} sm={6} md={3}>
             <Typography variant="h6" gutterBottom>
