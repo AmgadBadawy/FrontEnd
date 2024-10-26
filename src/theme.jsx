@@ -2,8 +2,7 @@ import { createContext, useState, useMemo, useEffect } from "react";
 import { createTheme } from "@mui/material/styles";
 import { grey } from "@mui/material/colors";
 
-// دالة للحصول على إعدادات التصميم بناءً على الوضع (light/dark)
-// eslint-disable-next-line react-refresh/only-export-components
+// دالة لإنشاء إعدادات التصميم بناءً على الوضع (light/dark)
 export const getDesignTokens = (mode) => ({
   palette: {
     mode,
@@ -27,8 +26,7 @@ export const getDesignTokens = (mode) => ({
           },
           footer: {
             main: "#fff",
-          }
-          
+          },
         }
       : {
           // ألوان الوضع الليلي
@@ -49,7 +47,7 @@ export const getDesignTokens = (mode) => ({
           },
           footer: {
             main: "#000",
-          }
+          },
         }),
   },
 });
@@ -60,11 +58,10 @@ export const ColorModeContext = createContext({
 });
 
 // هوك لتخزين وإدارة الوضع (light/dark)
-// eslint-disable-next-line react-refresh/only-export-components
 export const useMode = () => {
   const [mode, setMode] = useState("light");
 
-  // التأكد من حفظ واسترجاع الوضع من localStorage عند تحميل الصفحة
+  // استرجاع الوضع المحفوظ من localStorage عند تحميل الصفحة
   useEffect(() => {
     const savedMode = localStorage.getItem("mode");
     if (savedMode) {
@@ -72,13 +69,13 @@ export const useMode = () => {
     }
   }, []);
 
-  // استخدام useMemo لتجنب إعادة إنشاء دالة toggleColorMode عند كل تحديث
+  // إنشاء دالة لتغيير الوضع وتخزينه في localStorage
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
         setMode((prevMode) => {
           const newMode = prevMode === "light" ? "dark" : "light";
-          localStorage.setItem("mode", newMode); // حفظ الوضع الجديد في localStorage
+          localStorage.setItem("mode", newMode); // حفظ الوضع الجديد
           return newMode;
         });
       },
@@ -86,7 +83,7 @@ export const useMode = () => {
     []
   );
 
-  // استخدام useMemo لإنشاء الثيم بناءً على الوضع
+  // إنشاء الثيم بناءً على الوضع
   const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return [theme, colorMode];
